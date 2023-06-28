@@ -1,22 +1,20 @@
 package me.kteq.hiddenarmor.util;
 
-import org.bukkit.ChatColor;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import org.aslstd.api.bukkit.message.Texts;
+
+import com.google.common.collect.ImmutableList;
+
 public class StrUtil {
 
-    public static String color(String s){
-        return ChatColor.translateAlternateColorCodes('&', s);
-    }
+	public static List<String> color(List<String> stringList) {
+		final List<String> colored = new ArrayList<>();
 
-    public static List<String> color(List<String> stringList){
-        List<String> coloredStringList = new ArrayList<>();
-        for(String s : stringList){
-            coloredStringList.add(color(s));
-        }
-        return coloredStringList;
-    }
+		ImmutableList.copyOf(stringList).forEach(s -> colored.add(Texts.c(s)));
+
+		return colored;
+	}
 
 }

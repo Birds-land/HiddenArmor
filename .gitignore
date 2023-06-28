@@ -113,3 +113,6 @@ buildNumber.properties
 run/
 /HiddenArmor.png
 /project.properties
+.settings/
+*.project
+*.classpath
